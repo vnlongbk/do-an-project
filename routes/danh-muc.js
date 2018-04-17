@@ -21,7 +21,7 @@ router.get('/them-muc', checkUserMiddleware, async (req, res) => {
 })
 
 router.get('/list-danh-muc', checkUserMiddleware ,async (req, res) =>{
-  const data = await Category.find().populate('parent');
+  const data = await Category.find();
   res.render('list-danh-muc',{
     layout: 'admin',
     data,
@@ -34,7 +34,7 @@ router.get('/list-danh-muc', checkUserMiddleware ,async (req, res) =>{
 router.get('/sua/:id', checkUserMiddleware ,async (req, res) =>{
   const id = req.params.id
   const data = await Category.find();
-  const parent = await Category.findById(id).populate('parent');
+  const parent = await Category.findById(id);
   
   res.render('sua-danh-muc',{
     layout: 'admin',

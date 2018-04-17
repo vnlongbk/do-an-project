@@ -20,7 +20,7 @@ router.get('/dang-bai', checkUserMiddleware, async (req, res) => {
   })
   
 router.get('/', checkUserMiddleware, async (req, res) => { 
-  const data = await Article.find().populate('category');
+  const data = await Article.find();
     res.render('list-bai-viet', {
       layout: 'admin',
       data,
@@ -32,7 +32,7 @@ router.get('/', checkUserMiddleware, async (req, res) => {
 
 router.get('/sua/:id', checkUserMiddleware,async (req, res) =>{
   const id = req.params.id
-  const data = await Article.findById(id).populate('category');
+  const data = await Article.findById(id);
   const cates = await Category.find();
   res.render('sua-bai',{
     layout: 'admin',
