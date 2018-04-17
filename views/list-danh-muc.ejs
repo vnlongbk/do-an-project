@@ -1,0 +1,67 @@
+<%- contentFor('body-content') %>
+
+
+<div style="width:100%; padding: 0 20px;">
+    <div class='content'>
+        <div class="card-header">
+            <div style="width:50%">
+                <h3> Danh mục </h3>
+            </div>
+            <div style="width:50%">
+                 <a href="/admin/danh-muc/them-muc" > <button type="button" class="btn btn-outline-primary" style="margin:auto;float:right;margin-top:-3px" >
+                 Tạo danh mục</button></a>
+            </div>
+        </div>
+        <div class="card-table">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width:25%;border-top:none">Tên danh mục</th>
+                        <th style="width:40%;border-top:none">Mô tả </th>
+                        <th style="width:25%;border-top:none">Thuộc danh mục </th>
+                        <th style="width:5%;border-top:none">Sửa </th>
+                        <th style="width:5%;border-top:none">Xóa </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach((da) =>{ %>
+                    <tr  >
+                        <td style="width:25%;border-top:none"><%=da.name%></td>
+                        <td style="width:40%;border-top:none"><%=da.description%></td>
+                        <td style="width:25%;border-top:none"><%=da.parent && da.parent.name%></td>
+                        <td style="width:5%;border-top:none" class="btn-td" ><a href="/admin/danh-muc/sua/<%=da._id%>" class="btn btn-info"   ><i class="fas fa-pen-square "></i></a></td>
+                        <td style="width:5%;border-top:none" class="btn-td" ><a href="/admin/danh-muc/xoa/<%=da._id%>" class="btn btn-danger" ><i class="far fa-trash-alt " style="color:white" ></i></a></td>
+                    </tr>
+                     <% }) %>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-pagination" >
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

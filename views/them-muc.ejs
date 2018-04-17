@@ -1,0 +1,55 @@
+<%- contentFor('body-content') %>
+
+<div style="width:100%;padding: 0 20px;">
+    <div class="content">
+      <div class="card-header" style="text-align:center">
+        <h3> Tạo danh mục  </h3>
+      </div>
+      <div class="card-body" >
+        <div class="content-body">
+          <form method="POST" action="/admin/danh-muc/them-muc">
+            <div class="submit-btn">
+              <div class="col-25">
+                <label for="name">Tên danh mục :</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="name" name="name" >
+              </div>
+            </div>
+            <div class="submit-btn">
+              <div class="col-25">
+                <label for="description">Miêu tả :</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="description" name="description" >
+              </div>
+            </div>
+            <div class="submit-btn">
+              <div class="col-25">
+                <label for="img">Hình :</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="img" name="img" >
+              </div>
+            </div>
+            <div class="submit-btn">
+              <div class="col-25">
+                <label for="parent">Thuộc danh mục :</label>
+              </div>
+              <div class="col-75">
+                <select id="parent" name="parent" style="height:40px;width:auto;" class="custom-select "  >
+                    <option value=""  >Không</option>
+                    <% parent.forEach((pa) => { %>
+                        <option value="<%=pa._id%>"><%=pa.name%></option>
+                    <% }) %>
+                </select>
+              </div>
+            </div>
+            <div class="submit-btn" style="padding-top:20px" >
+              <button type="submit" class="btn btn-outline-success" style="float:right"  >Thêm</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

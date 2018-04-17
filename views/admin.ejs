@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Admin</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+    crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/admin.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+    <script src="https://cdn.ckeditor.com/4.9.1/standard-all/ckeditor.js"></script>
+    <link rel="icon"  href="./images/motogp.png">
+    
+     
+</head>
+
+
+<body class="body">
+  <div class="container-fluid " style="height:50px;padding:0">
+    <header class="app-header">
+      <div id="main">
+        <span id="Nav">&#9776;</span>
+        <a style="padding-left:9px;padding-bottom: 2px;">Trang quản lí </a>
+        <div style="width:80%;margin-left: 60px;margin-top: -5px;" ><a href="/admin/log-out"><button type="button" class="btn btn-outline-danger" style="float:right" >Log out</button></a></div>
+      </div>
+    </header>
+  </div>
+  <div class="container-fluid " style="padding:0;">
+    <div style="display: flex">
+      <div>
+        <div id="mySidenav" class="sidenav">
+          <a href="/trang-chu">Trang chủ</a>                    
+          <a href="/admin/bai-viet">Bài viết</a>          
+          <a href="/admin/danh-muc/list-danh-muc/">Danh mục</a>
+        </div>
+      </div>
+      <div id="app-body">
+        <div style="width:100%">
+          <nav>
+            <ul class="breadcrumb" style="background-color:white">
+              <%-breadcrumb %>
+            </ul>
+          </nav>
+        </div>
+        <div> <%-defineContent('body-content')%> </div>     
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script>
+    let i = 0
+    Nav.onclick = () => {
+      if (i % 2 == 0) {
+        document.getElementById("mySidenav").style.width = "190px";
+        document.getElementById("app-body").style.marginLeft = "190px";
+      } else {
+        document.getElementById("mySidenav").style.width = "0px";
+        document.getElementById("app-body").style.marginLeft = "0px";
+      }
+      i = i + 1;
+      return i;
+    }
+
+    CKEDITOR.replace( 'editor' );
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<%- contentFor('body-content') %>
+
+<div style="width:100%;padding: 0 20px;">
+    <div class="content">
+      <div class="card-header" style="text-align:center">
+        <h3> Chỉnh sửa bài viết</h3>
+      </div>
+      <div class="card-body" >
+        <div class="content-body">
+          <form method="POST" action="/admin/bai-viet/sua/<%= data._id%>">
+            <div class="submit-btn">
+              <div class="col-25">
+                <label for="title">Tiêu đề :</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="title" name="title" value="<%= data.title%>" >
+              </div>
+            </div>
+            <div class="submit-btn">
+              <div class="col-25">
+                <label for="description">Miêu tả :</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="description" name="description" value="<%= data.description%>" >
+              </div>
+            </div>
+            <div class="submit-btn">
+              <div class="col-25">
+                <label for="img">File hình ảnh :</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="img" name="img" value="<%= data.img%>" >
+              </div>
+            </div>
+            <div class="submit-btn">
+              <div class="col-25">
+                <label for="category">Mục bài viết :</label>
+              </div>
+              <div class="col-75">
+                <select id="category" name="category" option="" value="<%=data.category._id%>" style="height:40px;width:auto"  class="custom-select ">
+                  <% cates.forEach((cate) =>{ %>
+                    <option value="<%=cate._id%>"  <%= (cate._id.toString() === data.category._id.toString() ? 'selected': '')%> ><%=cate.name%></option>
+                  <% }) %>
+                </select>
+              </div>
+            </div>
+            <div class="submit-btn">
+              <div class="col-25">
+                <label for="content">Nội dung :</label>
+              </div>
+              <div class="col-75"  >
+                <textarea id="editor" name="content"  style="height:100px;width:100%"><%= data.content%></textarea>
+              </div>
+            </div>
+            <div class="submit-btn " style="padding-top:20px" >
+              <button type="submit" class="btn btn-outline-success" style="float:right" >Đồng ý</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,183 @@
+<%- contentFor('content') %>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Sport Motocycle News</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/trang-chu.css">
+    <link rel="icon"  href="./images/motogp.png">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+
+  </head> 
+
+<body class="body" >
+
+    <div class="icon-bar">
+        <a href="#" class="facebook"><i class="fab fa-facebook"></i></a> 
+        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a> 
+        <a href="#" class="google"><i class="fab fa-google"></i></a> 
+        <a href="#" class="linkedin"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="youtube"><i class="fab fa-youtube"></i></a> 
+    </div>
+    
+    <% include header %>
+    
+    <div class="container-fluid" style="padding:0px" >
+        <div class="app-body-1"  style="background-image: url(../images/backg1.jpg);height: 86.6vh;" >
+        </div>
+        <div class="app-body-2" >
+            <div class="menu" >
+                <nav style="position:relavetive" >
+                    <ul style="list-style:none" >
+                        <li class="li" >
+                            <a href="#" >Trang chủ</a>
+                        </li>
+                        <li class="li" >
+                            <a href="#tin-tuc" >Tin tức</a>
+                        </li>
+                        <li class="li" >
+                            <a href="#calendar" >Lịch thi đâu</a>
+                        </li>
+                        <li class="li" >
+                            <a href="#calendar" >Tay đua</a>
+                        </li>
+                        <li class="li" >
+                            <a href="#" >Sự kiện</a>
+                        </li>
+                        <li class="li" >
+                            <a href="#" >Liên hệ</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="app-body-3" id="tin-tuc" >
+            <div class="app-news"  >
+                <header class="header-news" >News</header>
+                <div class="content-news">
+                    <ul>
+                    <% article.forEach((art) =>{%>
+                        <li>
+                            <div class="body-news" >
+                                <div ><img src="./images/bai-viet/<%=art.img%>.jpg"class="img-news" ></img></div>
+                                <div style="margin-left:30px" >
+                                    <a  ><div class="category" ><%=art.category.name%></div></a>
+                                    <a  ><h3 class="title" ><%=art.title%></h3></a>
+                                    <div class="des" ><%=art.description%></div>
+                                    <div style="margin-top:10px" class="social">
+                                    <a href="#"><i class="fas fa-thumbs-up fa-2x"></i></a>&emsp;
+                                    <a href="#" ><i class="fas fa-share fa-2x" ></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    <% })%>                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="app-body-1" style="background-image: url(../images/backg3.jpg);height: 100vh;" >
+        </div>
+        <div class="container-fluid app-body-5" id="calendar" >
+            <div class="col-11 offset-md-1">
+                <div class="col-9"  style="height:100%;float:left" >
+                    <div class="card-info" >
+                        <header>Riders</header>
+                        <div class="row"  style="display:flex;margin-bottom:30px" >
+                            <%profile.forEach((pro) => {%>    
+                                <div class="col-md-4" style="margin-right:0px;margin-bottom:20px" >
+                                    <div class="card">
+                                        <img src="./images/profile/<%=pro.Img%>.jpg"  style="width:auto;height:200px"></img>
+                                        <h3 style="margin:5px 0" ><%=pro.Name%></h3>
+                                        <div style="display:flex;margin-top:-5px">
+                                            <img src="./images/flags/<%=pro.Country%>.png" style="margin-left:35px" ></img>
+                                            <p class="title-2"><%=pro.Age%></p>
+                                        </div>
+                                        <p style="font-size:20px" ><%=pro.Team%></p>
+                                        <div style="margin: 15px 0;">
+                                            <a href="#"><i class="fab fa-twitter"></i></a>  
+                                            <a href="#"><i class="fab fa-linkedin"></i></a>  
+                                            <a href="#"><i class="fab fa-facebook"></i></a> 
+                                        </div>
+                                    </div>
+                                </div>
+                            <%})%>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 calendar" >
+                    <article>
+                        <header>
+                            <h4>CALENDAR</h4>
+                        </header>
+                        <div class="update-content" >
+                            <ul>
+                                <%calendar.forEach((ca) =>{%>
+                                <li>
+                                    <div class="date" ><%=ca.date%></div>
+                                    <div class="event" >
+                                        <div class="pull-left">
+                                            <img src="<%=ca.img%>" style="width: 25px;height: 22px;"></img>
+                                        </div>
+                                        <h3><%=ca.name%></h3>
+                                        <div class="ticket" ><i class="fas fa-ticket-alt fa-2x"></i></div>
+                                    </div>
+                                    <div></div>
+                                </li>
+                                <% }) %>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer style="text-align:center" id="footer" >
+    Design by Vo Nhut Long & Nguyen Hoang Minh Nhut
+  <div>
+    <p> About us </p>
+    <a href="#" >
+      <img src="./images/facebook.png" target="_blank"  width="40px" height="auto" class="ftimg"> </a>
+    <a href="#" >
+      <img src="./images/instagram.png" alt="" width="40px" height="auto" class="ftimg"> </a>
+    <a href="#" >
+      <img src="./images/twitter.png" alt="" width="40px" height="auto" class="ftimg"> </a>
+    <a href="#">
+      <img src="./images/phone-call.png" alt="" width="40px" height="auto" class="ftimg"> </a>
+  </div>
+</footer>
+    
+    
+  
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script>
+    let i = 0
+    Nav.onclick = () => {
+      if (i % 2 == 0) {
+        document.getElementById("mySidenav").style.width = "190px";
+        // document.app-body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      } else {
+        document.getElementById("mySidenav").style.width = "0px";
+        // document.app-body.style.backgroundColor = "white";
+      }
+      i = i + 1;
+      return i;
+    }
+
+  </script>
+  </body>
+
+</html>

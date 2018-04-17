@@ -1,0 +1,83 @@
+<%- contentFor('content') %>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Đăng nhập</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/dang-nhap.css">
+  <link rel="icon"  href="./images/motogp.png">
+  <link rel="stylesheet" href="/stylesheets/trang-chu.css">
+  
+  
+
+</head>
+
+<body>
+  <%include header %>
+
+  <div class="container">
+    <form method="POST" action="/admin/user">
+      <div class="row">
+        <h2 style="text-align:center">Đăng nhập bằng tài khoản được cấp sẵn</h2>
+        <div class="vl">
+          <span class="vl-innertext">or</span>
+        </div>
+
+        <div class="col">
+          <a href="/admin/auth/fb" class="fb btn">
+            <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+          </a>
+          <a href="#" class="twitter btn">
+            <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+          </a>
+          <a href="#" class="google btn">
+            <i class="fa fa-google fa-fw">
+            </i> Login with Google+
+          </a>
+        </div>
+
+        <div class="col">
+
+          <input type="text" name="username" id="username" placeholder="Username" required>
+          <input type="password" name="password" id="password" placeholder="Password" required>
+          <input type="submit" value="Login">
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+<script>
+  let i = 0
+    Nav.onclick = () => {
+      if (i % 2 == 0) {
+        document.getElementById("mySidenav").style.width = "190px";
+        // document.app-body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      } else {
+        document.getElementById("mySidenav").style.width = "0px";
+        // document.app-body.style.backgroundColor = "white";
+      }
+      i = i + 1;
+      return i;
+    }
+
+</script>
+</body>
+
+</html>
