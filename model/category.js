@@ -5,10 +5,11 @@ const CategorySchema = mongoose.model('categorys', {
     name: String,
     img: String,
     description: String,
-    parent:{
-        type:Schema.Types.ObjectId,
-        ref: 'categorys'
-    }
+    parent:String,
+    // parent:{
+    //     type:Schema.Types.ObjectId,
+    //     ref: 'categorys'
+    // }
 })
 
 module.exports = CategorySchema

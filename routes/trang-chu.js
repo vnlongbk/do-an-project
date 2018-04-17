@@ -5,7 +5,7 @@ var profile = require('../model/profile')
 var articles = require('../model/article')
 
 router.get('/', async (req, res) =>{
-    const article = await articles.find().populate('category')
+    const article = await articles.find()
     res.render ('trang-chu',{
         layout:'',
         calendar,

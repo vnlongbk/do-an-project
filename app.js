@@ -15,7 +15,8 @@ const passport = require('passport')
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/Data')
+mongoose.connect('mongodb://vnlongbk:nhutlong95@ds249079.mlab.com:49079/do-an-project')
+//mongoose.connect('mongodb://localhost/Data')
 mongoose.Promise = Promise;
 
 
